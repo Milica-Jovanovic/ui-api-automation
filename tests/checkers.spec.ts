@@ -3,7 +3,7 @@ import { CheckersPage } from '../pages/CheckersPage'
 import { testData } from '../utils/testData'
 import { clickUntilVisible } from '../utils/helpers'
 
-test.describe.parallel.only('Checkers Game Test', () => {
+test.describe('Checkers Game Test', () => {
   let checkersPage: CheckersPage
 
   test.beforeEach(async ({ page }) => {

@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import { Page } from "@playwright/test";
 import { CheckersPage } from "../pages/CheckersPage";
 
 export async function clickUntilVisible(page: Page, checkersPage: CheckersPage, boardSquare1: string, boardSquare2: string ) {
@@ -16,5 +16,3 @@ export async function clickUntilVisible(page: Page, checkersPage: CheckersPage, 
   }
   throw new Error(`Target element did not become visible after ${maxAttempts} attempts.`);
 }
-// getBoardSquare
-// boardSquare

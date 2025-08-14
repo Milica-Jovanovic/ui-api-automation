@@ -10,4 +10,7 @@ export const testData = {
     fourthMoveBoardSquareIndex2: `24`,
     fifthMoveBoardSquareIndex1: `42`,
     fifthMoveBoardSquareIndex2: `53`,
+    deckOfCardsUrl: `https://deckofcardsapi.com/`,
+    deckCount: 2,
+    cardCount: 3,
 }
