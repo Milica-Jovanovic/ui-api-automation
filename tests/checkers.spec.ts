@@ -14,30 +14,21 @@ test.describe('Checkers Game Test', () => {
 
   test('E2E Test Flow', async ({ page }) => {
 
-    await test.step('The first move', async () => {
-        await clickUntilVisible(page, checkersPage, testData.firstMoveBoardSquareIndex1, testData.firstMoveBoardSquareIndex2);
-        await expect(checkersPage.makeMoveMessage).toHaveText('Make a move.');
-    });
+    const moves = [
+        [testData.firstMoveBoardSquareIndex1, testData.firstMoveBoardSquareIndex2],
+        [testData.secondMoveBoardSquareIndex1, testData.secondMoveBoardSquareIndex2],
+        [testData.thirdMoveBoardSquareIndex1, testData.thirdMoveBoardSquareIndex2],
+        [testData.fourthMoveBoardSquareIndex1, testData.fourthMoveBoardSquareIndex2],
+        [testData.fifthMoveBoardSquareIndex1, testData.fifthMoveBoardSquareIndex2],
+    ];
 
-    await test.step('The second move', async () => {
-        await clickUntilVisible(page, checkersPage, testData.secondMoveBoardSquareIndex1, testData.secondMoveBoardSquareIndex2);
-        await expect(checkersPage.makeMoveMessage).toHaveText('Make a move.');
-    });
-
-    await test.step('The third move', async () => {
-        await clickUntilVisible(page, checkersPage, testData.thirdMoveBoardSquareIndex1, testData.thirdMoveBoardSquareIndex2);
-        await expect(checkersPage.makeMoveMessage).toHaveText('Make a move.');
-    });
-
-    await test.step('The fourth move', async () => {
-        await clickUntilVisible(page, checkersPage, testData.fourthMoveBoardSquareIndex1, testData.fourthMoveBoardSquareIndex2);
-        await expect(checkersPage.makeMoveMessage).toHaveText('Make a move.');
-    });
-
-    await test.step('The fifth move', async () => {
-        await clickUntilVisible(page, checkersPage, testData.fifthMoveBoardSquareIndex1, testData.fifthMoveBoardSquareIndex2);
-        await expect(checkersPage.makeMoveMessage).toHaveText('Make a move.');
-    });
+    for (let i = 0; i < moves.length; i++) {
+        await test.step(`Move ${i + 1}`, async () => {
+            const [from, to] = moves[i];
+            await clickUntilVisible(page, checkersPage, from, to);
+            await expect(checkersPage.makeMoveMessage).toHaveText('Make a move.');
+        });
+    }
 
     await test.step('Restart and verify there is a staring game message', async () => {
         await checkersPage.restart.click();
