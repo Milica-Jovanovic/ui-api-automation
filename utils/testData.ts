@@ -1,0 +1,13 @@
+export const testData = {
+    checkersUrl: `https://www.gamesforthebrain.com/game/checkers/`,
+    firstMoveBoardSquareIndex1: `22`,
+    firstMoveBoardSquareIndex2: `33`,
+    secondMoveBoardSquareIndex1: `02`,
+    secondMoveBoardSquareIndex2: `13`,
+    thirdMoveBoardSquareIndex1: `31`,
+    thirdMoveBoardSquareIndex2: `13`,
+    fourthMoveBoardSquareIndex1: `33`,
+    fourthMoveBoardSquareIndex2: `24`,
+    fifthMoveBoardSquareIndex1: `42`,
+    fifthMoveBoardSquareIndex2: `53`,
+}
